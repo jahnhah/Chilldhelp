@@ -54,7 +54,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
 
                 <TextView
                     android:id="@+id/textView10"
@@ -107,7 +108,7 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/button2"
+                            android:id="@+id/sign1btnBack"
                             android:layout_width="119dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="#D8D9DC"
@@ -123,7 +124,7 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/button2"
+                            android:id="@+id/sign1btnNext"
                             android:layout_width="119dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/bg_color"

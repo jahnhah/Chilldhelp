@@ -70,7 +70,7 @@
                     android:inputType="textPersonName" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/sign1btnNext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/bg_color"

@@ -14,16 +14,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="365dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@color/bg_color"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="100dp">
 
       <ImageView
           android:id="@+id/imageView"
           android:layout_width="match_parent"
-          android:layout_height="97dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
           app:srcCompat="@drawable/icon"
           app:tint="#FFFFFF" />
 
@@ -42,30 +44,33 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/white"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="40dp">
 
       <EditText
-          android:id="@+id/editTextTextEmailAddress"
+          android:id="@+id/editEmail"
           style="@style/Widget.AppCompat.AutoCompleteTextView"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="40dp"
           android:ems="10"
           android:hint="Email"
-          android:inputType="textEmailAddress" />
+          android:inputType="textEmailAddress"
+          android:minHeight="48dp" />
 
       <EditText
-          android:id="@+id/editTextTextPassword"
+          android:id="@+id/editPassword"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="40dp"
           android:ems="10"
           android:hint="Password"
-          android:inputType="textPassword" />
+          android:inputType="textPassword"
+          android:minHeight="48dp" />
 
       <Button
-          android:id="@+id/button"
+          android:id="@+id/btnLogin"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="20dp"
@@ -73,11 +78,24 @@
           android:text="LOGIN" />
 
       <TextView
-          android:id="@+id/textView2"
+          android:id="@+id/txtError"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:gravity="right"
-          android:text="Create an account" />
+          android:layout_marginBottom="20dp"
+          android:gravity="center"
+          android:text="Authentification failed!"
+          android:textColor="?attr/colorError"
+          android:textSize="16sp" />
+
+      <TextView
+          android:id="@+id/txtSignup"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom|right"
+          android:text="Create an account"
+          android:textColor="@color/bg_color"
+          android:textSize="20sp" />
+
     </LinearLayout>
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
