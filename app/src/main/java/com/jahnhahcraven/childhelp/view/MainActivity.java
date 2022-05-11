@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.PostControl;
 import com.jahnhahcraven.childhelp.model.Post;
+import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
 import com.jahnhahcraven.childhelp.view.fragment.ExampleFragment;
 import com.jahnhahcraven.childhelp.view.listener.GotoListener;
 
@@ -43,12 +44,10 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
      * properties initialisation
      */
     private void init(){
-//        init all the properties
-
         control= PostControl.getInstance();
         txtHello= findViewById(R.id.txt_hello);
         button=(Button) findViewById(R.id.btnGoto);
-        button.setOnClickListener(new GotoListener(this,SplashActivity.class));
+        button.setOnClickListener(new GotoListener(this, LoginActivity.class));
     }
 
 //    load posts
@@ -74,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
             }
         });
     }
+
     public void load(View view){
 //        loadPosts();
 
@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
             }
         });
     }
-
 
     @Override
     public void onFragmentInteraction(int id) {
