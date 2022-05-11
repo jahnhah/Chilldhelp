@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "3da684fe-2bc0-46af-a9a8-6dccca40974b",
+		"name": "api-i-asa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentification",
+			"item": [
+				{
+					"name": "sign in -- 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Tsiky Mr\",\r\n    \"email\":\"tsiky.rasolofomanana@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"contact\":\"034 05 030 27\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/user/inscription",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"user",
+								"inscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sing in -- 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"tsiky.rasolofomanana@gmail.com\",\r\n    \"code\":\"8604\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/user/check",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"user",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"tsiky.rasolofomanana@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
