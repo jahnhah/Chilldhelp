@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.PostControl;
 import com.jahnhahcraven.childhelp.model.Post;
 import com.jahnhahcraven.childhelp.view.fragment.ExampleFragment;
+import com.jahnhahcraven.childhelp.view.listener.GotoListener;
 
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
     public List<Post> posts;
     public Post post;
     TextView txtHello;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,11 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
      */
     private void init(){
 //        init all the properties
+
         control= PostControl.getInstance();
         txtHello= findViewById(R.id.txt_hello);
+        button=(Button) findViewById(R.id.btnGoto);
+        button.setOnClickListener(new GotoListener(this,SplashActivity.class));
     }
 
 //    load posts
