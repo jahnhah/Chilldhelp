@@ -1,13 +1,6 @@
 package com.jahnhahcraven.childhelp.view.auth;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-<<<<<<< Updated upstream
-
-import com.jahnhahcraven.childhelp.R;
-
-public class LoginActivity extends AppCompatActivity {
-=======
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,14 +8,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.UserControl;
 import com.jahnhahcraven.childhelp.model.LoginResponse;
-import com.jahnhahcraven.childhelp.model.Post;
 import com.jahnhahcraven.childhelp.model.User;
-import com.jahnhahcraven.childhelp.view.MainActivity;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,16 +37,12 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     };
->>>>>>> Stashed changes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
-<<<<<<< Updated upstream
-    }
-=======
         init();
     }
 
@@ -91,6 +78,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
->>>>>>> Stashed changes
 }
