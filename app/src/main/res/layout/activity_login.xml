@@ -49,7 +49,11 @@
         android:padding="40dp">
 
       <EditText
+<<<<<<< Updated upstream
           android:id="@+id/editEmail"
+=======
+          android:id="@+id/txt_login_email"
+>>>>>>> Stashed changes
           style="@style/Widget.AppCompat.AutoCompleteTextView"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -60,7 +64,11 @@
           android:minHeight="48dp" />
 
       <EditText
+<<<<<<< Updated upstream
           android:id="@+id/editPassword"
+=======
+          android:id="@+id/txt_login_pwd"
+>>>>>>> Stashed changes
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="40dp"
@@ -70,7 +78,11 @@
           android:minHeight="48dp" />
 
       <Button
+<<<<<<< Updated upstream
           android:id="@+id/btnLogin"
+=======
+          android:id="@+id/btn_login_submit"
+>>>>>>> Stashed changes
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="20dp"
@@ -78,7 +90,11 @@
           android:text="LOGIN" />
 
       <TextView
+<<<<<<< Updated upstream
           android:id="@+id/txtError"
+=======
+          android:id="@+id/lbl_login_error"
+>>>>>>> Stashed changes
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="20dp"
