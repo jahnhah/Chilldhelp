@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
-public interface IPostService {
+public interface  IPostService {
     @GET("Posts")
     Call<List<Post>> getAllPost();
     @GET("Posts/{id}")

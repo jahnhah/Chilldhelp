@@ -20,6 +20,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.jahnhahcraven.childhelp.R;
+import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -27,9 +28,11 @@ import com.jahnhahcraven.childhelp.R;
  */
 public class SplashActivity extends AppCompatActivity {
     private ImageView imgLogo;
+
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private Handler handler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,15 +46,17 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent  = new Intent(SplashActivity.this,MainActivity.class);
+                Intent intent  = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
         },3000);
     }
+
     private void init(){
         imgLogo=(ImageView) findViewById(R.id.imgLogo);
     }
+
     private void initLogoAnimation(){
         Animation aniSlide = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.animation_logo);
         imgLogo.startAnimation(aniSlide);
