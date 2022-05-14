@@ -84,5 +84,5 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
-#Back end
+#node_modules
 node_modules
