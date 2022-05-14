@@ -12,7 +12,7 @@ exports.mail = async (to,code) => {
         });
 
         await transporter.sendMail({
-            from: '"I-Asa" noreply.ikaly@gmail.com', // sender address
+            from: '"Child Help" noreply.ikaly@gmail.com', // sender address
             to: to, // list of receivers
             subject: "Code de confirmation", // Subject line
             text: "", // plain text body
@@ -144,7 +144,7 @@ exports.mail = async (to,code) => {
                       <tr>
                         <td align="center" valign="top" style="padding: 36px 24px;">
                           <a href="#" target="_blank" style="display: inline-block;">
-                            <img src="https://drive.google.com/uc?id=1h6wTwFf6PAvjvgzQcrSyUKx2LC-ZtD1X" alt="Logo" border="0" width="48" style="display: block; width: 48px; max-width: 48px; min-width: 48px;">
+                            <img src="https://drive.google.com/uc?id=1VMtbkdHx-agerC4f9JaRzYGtNClMqWXI" alt="Logo" border="0" width="48" style="display: block; width: 48px; max-width: 48px; min-width: 48px;">
                           </a>
                         </td>
                       </tr>
@@ -195,7 +195,7 @@ exports.mail = async (to,code) => {
                       <!-- start copy -->
                       <tr>
                         <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-                          <p style="margin: 0;">Bienvenue sur <strong style="color: #1F1D64;">I-asa Platform</strong> , Je vous remercie d'avoir cr&eacute;er votre compte . Pour finaliser , veuillez sasir ce code suivant </p>
+                          <p style="margin: 0;">Bienvenue sur <strong style="color: #1F1D64;">Child-help Platform</strong> , Je vous remercie d'avoir cr&eacute;er votre compte . Pour finaliser , veuillez sasir ce code suivant </p>
                         </td>
                       </tr>
                       <!-- end copy -->
@@ -208,7 +208,7 @@ exports.mail = async (to,code) => {
                               <td align="center" bgcolor="#ffffff" style="padding: 12px;">
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tr>
-                                    <td align="center" bgcolor="#1F1D64" style="border-radius: 6px;">
+                                    <td align="center" bgcolor="#4A66F0" style="border-radius: 6px;">
                                         <h1 style="padding: 0 25px;color: white;">${code}</h1>
                                     </td>
                                   </tr>
@@ -231,7 +231,7 @@ exports.mail = async (to,code) => {
                       <!-- start copy -->
                       <tr>
                         <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf">
-                          <p style="margin: 0;">Cheers,<br> mazotoa m<strong>I-Asa</strong></p>
+                          <p style="margin: 0;">Cheers,<br> <strong>Child-help Company</strong></p>
                         </td>
                       </tr>
                       <!-- end copy -->

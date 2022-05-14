@@ -13,6 +13,7 @@ const ROLES = []
 // sendMail
 
 exports.inscription = async (request,response) => {
+  console.log(request.body);
   request.body.role = "user";
   const user = new User(request.body);
   user.password = bcrypt.hashSync(user.password, 8);
