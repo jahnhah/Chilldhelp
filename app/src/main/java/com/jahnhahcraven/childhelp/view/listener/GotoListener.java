@@ -10,6 +10,7 @@ public class GotoListener implements View.OnClickListener {
     private Class toShowClass;
     private String message;
 
+
     public GotoListener(Activity current,Class toShow) {
         this.currentActivity=current;
         this.toShowClass=toShow;

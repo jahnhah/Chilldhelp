@@ -69,14 +69,12 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
         control.getAllPost().enqueue(new Callback<List<Post>>() {
             @Override
             public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-                if(response.isSuccessful()){
-                    posts=response.body();
-                }
-                else{
+                if(response.isSuccessful()) {
+                    posts = response.body();
+                }else{
                     Toast.makeText(MainActivity.this,"Error->"+response.code(),Toast.LENGTH_LONG).show();
                     return;
                 }
-
             }
 
             @Override

@@ -14,6 +14,7 @@ import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.UserControl;
 import com.jahnhahcraven.childhelp.model.LoginResponse;
 import com.jahnhahcraven.childhelp.model.User;
+import com.jahnhahcraven.childhelp.view.listener.GotoListener;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,14 +29,15 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private String emaiValue;
     private String pwdValue;
-    public View.OnClickListener onButtonPressed= new Button.OnClickListener(){
+    private TextView linkSign;
+
+
+    public View.OnClickListener onButtonPressed = new Button.OnClickListener(){
         public void onClick(View view){
             emaiValue=txtEmail.getText().toString();
             pwdValue=txtPwd.getText().toString();
             login();
-
         }
-
     };
 
     @Override
@@ -46,15 +48,17 @@ public class LoginActivity extends AppCompatActivity {
         init();
     }
 
+
     private void init(){
-        this.userControl=UserControl.getInstance();
-        this.txtEmail=findViewById(R.id.txt_login_email);
-        this.txtPwd=findViewById(R.id.txt_login_pwd);
-        this.lblError=findViewById(R.id.lbl_login_error);
-        this.btnLogin=findViewById(R.id.btn_login_submit);
+        this.userControl = UserControl.getInstance();
+        this.txtEmail = findViewById(R.id.txt_login_email);
+        this.txtPwd = findViewById(R.id.txt_login_pwd);
+        this.lblError = findViewById(R.id.lbl_login_error);
+        this.btnLogin = findViewById(R.id.btn_login_submit);
+        this.linkSign = (TextView) findViewById(R.id.txtSignup);
+        linkSign.setOnClickListener(new GotoListener(this, Sign1Activity.class));
         btnLogin.setOnClickListener(onButtonPressed);
     }
-
 
     private void login(){
         userControl.login(emaiValue,pwdValue).enqueue(new Callback<LoginResponse>() {
