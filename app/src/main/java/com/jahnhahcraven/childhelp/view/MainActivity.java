@@ -14,8 +14,11 @@ import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.PostControl;
 import com.jahnhahcraven.childhelp.model.Post;
 import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
-import com.jahnhahcraven.childhelp.view.fragment.ExampleFragment;
+import com.jahnhahcraven.childhelp.fragment.ExampleFragment;
+import com.jahnhahcraven.childhelp.view.home.HomeActivity;
+import com.jahnhahcraven.childhelp.view.lettre.LettreActivity;
 import com.jahnhahcraven.childhelp.view.listener.GotoListener;
+import com.jahnhahcraven.childhelp.view.puzzle.PuzzleActivity;
 
 import java.util.List;
 
@@ -30,7 +33,9 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
     public Post post;
     TextView txtHello;
     Button button;
-
+    Button goToLettre;
+    Button goToType;
+    Button goToPuzzle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +53,15 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
         txtHello= findViewById(R.id.txt_hello);
         button=(Button) findViewById(R.id.btnGoto);
         button.setOnClickListener(new GotoListener(this, LoginActivity.class));
+
+        goToType=(Button) findViewById(R.id.btn_main_gameType);
+        goToType.setOnClickListener(new GotoListener(this, HomeActivity.class));
+
+        goToLettre=(Button) findViewById(R.id.btn_main_lettre);
+        goToLettre.setOnClickListener(new GotoListener(this, LettreActivity.class));
+
+        goToPuzzle=(Button) findViewById(R.id.btn_main_puzzle);
+        goToPuzzle.setOnClickListener(new GotoListener(this, PuzzleActivity.class));
     }
 
 //    load posts

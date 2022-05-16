@@ -14,4 +14,6 @@
     <color name="black_overlay">#66000000</color>
     <color name="color_bg" />
     <color name="bg_color">#4A66F0</color>
+    <color name="light_grey">#7C7C7C</color>
+    <color name="transparent">#007C7C7C</color>
 </resources>

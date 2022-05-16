@@ -14,7 +14,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
-            android:name="com.jahnhahcraven.childhelp.view.fragment.ExampleFragment"
+            android:name="com.jahnhahcraven.childhelp.fragment.ExampleFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_example" />
@@ -30,6 +30,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
+
+        <Button
+            android:id="@+id/btn_main_lettre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="jeux de lettre" />
+
+        <Button
+            android:id="@+id/btn_main_gameType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gametype" />
+
+        <Button
+            android:id="@+id/btn_main_puzzle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PUZZLE" />
 
     </LinearLayout>
 

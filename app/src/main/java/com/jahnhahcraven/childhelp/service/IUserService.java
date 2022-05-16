@@ -11,6 +11,6 @@ import retrofit2.http.POST;
 
 public interface IUserService {
 
-    @POST("/login")
+    @POST("/users")
     Call<LoginResponse> login(@Body LoginRequest auths);
 }
