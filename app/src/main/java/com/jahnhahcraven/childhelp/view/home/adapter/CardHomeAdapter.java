@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 public class CardHomeAdapter extends ArrayAdapter<GameType> {
     public CardHomeAdapter(@NonNull Context context, ArrayList<GameType> listGame) {
-        super(context,0, listGame);
+        super(context, 0, listGame);
     }
 
     @NonNull
@@ -42,29 +42,15 @@ public class CardHomeAdapter extends ArrayAdapter<GameType> {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.widget_home_card, parent, false);
         }
         GameType game = getItem(position);
-        CardView card=(CardView) listitemView.findViewById(R.id.widget_home_card);
-        ImageView img=(ImageView) listitemView.findViewById(R.id.img_widgetHome_bgImg);
-        TextView text=(TextView) listitemView.findViewById(R.id.txt_widgetHome_name);
+        CardView card = (CardView) listitemView.findViewById(R.id.widget_home_card);
+        ImageView img = (ImageView) listitemView.findViewById(R.id.img_widgetHome_bgImg);
+        TextView text = (TextView) listitemView.findViewById(R.id.txt_widgetHome_name);
         Glide.with(getContext()).load(game.getSrcUrl()).centerCrop().into(img);
         text.setText(game.getName());
-        GotoListener listener=new GotoListener((HomeActivity)getContext(),LevelActivity.class);
+        GotoListener listener = new GotoListener((HomeActivity) getContext(), LevelActivity.class);
         listener.setMessage(game.getName());
         card.setOnClickListener(listener);
 
         return listitemView;
     }
-
-//    View.OnClickListener getListener(String name){
-//        if(name.toUpperCase().compareTo("LETTRE")==0){
-//            return new GotoListener((HomeActivity)getContext(), LevelActivity.class);
-//        }
-//        if(name.toUpperCase().compareTo("CHIFFRE")==0){
-////            return new GotoListener((HomeActivity)getContext(), ChiffreActivity.class);
-//        }
-//        if(name.toUpperCase().compareTo("PUZZLE")==0){
-//            return new GotoListener((HomeActivity)getContext(), PuzzleActivity.class);
-//        }
-//        return null;
-//    }
-
 }

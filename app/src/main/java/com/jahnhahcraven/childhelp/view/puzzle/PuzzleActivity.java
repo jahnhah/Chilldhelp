@@ -22,25 +22,32 @@ public class PuzzleActivity extends AppCompatActivity {
 
     private void init(){
         getSupportActionBar().hide();
-        loadTile();
         gridView=(GridView) findViewById(R.id.grid_puzzle_board);
-      gridView.setNumColumns((int)Math.sqrt(list_tile.size()));
+    }
 
+
+    private void setGridView(){
+        gridView.setNumColumns((int)Math.sqrt(list_tile.size()));
         puzzleAdapter= new PuzzleAdapter(this, list_tile);
         gridView.setAdapter(puzzleAdapter);
+        int width=gridView.getColumnWidth();
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle);
         init();
+        loadTile();
+        setGridView();
     }
 
     private void loadTile(){
         list_tile=new ArrayList<Tile>();
-        for(int i=0;i<100;i++){
+        for(int i=0;i<8;i++){
             list_tile.add(new Tile(i,""));
         }
+        list_tile.add(new Tile(-1,""));
     }
 }
