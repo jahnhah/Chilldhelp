@@ -5,7 +5,9 @@ public class User {
     String username;
     String email;
     String password;
-
+    String code;
+    String role;
+    String activate;
 
     public User() {
     }
@@ -21,6 +23,22 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getActivate() {
+        return activate;
+    }
+
+    public void setActivate(String activate) {
+        this.activate = activate;
     }
 
     public String getId() {
@@ -55,4 +73,22 @@ public class User {
         this.password = password;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", code='" + code + '\'' +
+                '}';
+    }
 }

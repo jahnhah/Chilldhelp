@@ -51,7 +51,7 @@
                     android:text="Nom" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName8"
+                    android:id="@+id/editTextNom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -65,7 +65,7 @@
                     android:text="Prénom" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName7"
+                    android:id="@+id/editTextPrenom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -78,7 +78,7 @@
                     android:text="Email" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName6"
+                    android:id="@+id/editTextEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -91,7 +91,7 @@
                     android:text="Password" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName5"
+                    android:id="@+id/editTextCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -133,7 +133,7 @@
                         android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/sign1btnNext"
+                            android:id="@+id/sign2btnNext"
                             android:layout_width="119dp"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/bg_color"

@@ -11,7 +11,7 @@ public class BaseService {
     private BaseService(){
         Retrofit retrofit= new Retrofit
                 .Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com")
+                .baseUrl("http://172.20.10.3:8080")
                 .addConverterFactory(GsonConverterFactory.create())
                  .build();
         postService=retrofit.create(IPostService.class);
