@@ -4,33 +4,48 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.jahnhahcraven.childhelp.R;
+import com.jahnhahcraven.childhelp.model.User;
 
 public class SessionManager {
-
-    private Context context;
-    private SharedPreferences prefs=context.getSharedPreferences(context.getString(R.string.app_name),Context.MODE_PRIVATE);
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     private final static String USER_TOKEN="user_token";
+
+
     public SessionManager(Context context) {
-        this.context = context;
+        this.sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name),Context.MODE_PRIVATE);
+        editor = this.sharedPreferences.edit();
+        editor.apply();
     }
 
     /**
      * Function to save auth token
      */
 
-    public  void saveAuthToken(String token) {
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString(USER_TOKEN, token);
-        editor.apply();
+    public void saveAuthToken(String token) {
+       this.editor.putString("KEY_TOKEN",token);
+       this.editor.commit();
+    }
+
+    public void setEmail(String email){
+        this.editor.putString("KEY_EMAIL",email);
+        this.editor.commit();
+    }
+
+    public void setUser(String nomComplet){
+        this.editor.putString("KEY_USER",nomComplet);
+        this.editor.commit();
     }
 
     /**
      * Function to fetch auth token
      */
+    public String getSessionString(String key) {
+        return this.sharedPreferences.getString(key,"");
+    }
 
-    public  String fetchAuthToken()
-    {
-        return prefs.getString(USER_TOKEN,null);
+    public Boolean getSessionBoolean(String key) {
+        return this.sharedPreferences.getBoolean(key,false);
     }
 
 }

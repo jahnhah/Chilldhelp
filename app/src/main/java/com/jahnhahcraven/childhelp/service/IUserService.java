@@ -17,7 +17,9 @@ public interface IUserService {
     @POST("/users")
     Call<LoginResponse> login(@Body LoginRequest auths);
 
-    @FormUrlEncoded
     @POST("/auth/user/inscription")
-    Call<ReponseAPI> sign1User(@Field("body") User utilisateur);
+    Call<ReponseAPI> sign1User(@Body User utilisateur);
+
+    @POST("/auth/user/check")
+    Call<ReponseAPI> sign2User(@Body User utilisateur);
 }

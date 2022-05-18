@@ -52,8 +52,11 @@ public class UserControl {
         reponse.enqueue(new Callback<ReponseAPI>() {
             @Override
             public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
+                Log.e("Status",response.body().getStatus().toString());
                 if(response.body().getStatus() == 200){
                     Intent intent  = new Intent(pageRecent, redirection);
+                    SessionManager session = new SessionManager(pageRecent);
+                    session.setEmail(object.getEmail());
                     pageRecent.startActivity(intent);
                 }else{
                     Log.e("Line Code :","Line 54 -- User Control.java");
@@ -68,6 +71,41 @@ public class UserControl {
                 Log.e("Line Code :","Line 54 -- User Control.java");
                 Log.e("Message Error",t.getMessage());
                 message.setText("intern Server Error");
+                message.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+
+    public void sign2Feature(Button ciblé, TextView message , Activity pageRecent, Class redirection, User user){
+        Log.e("code:",user.toString());
+        SessionManager session = new SessionManager(pageRecent);
+        Log.e("83 Sin2Feature", "onClick: Eto isika  no key Email "+session.getSessionString("KEY_EMAIL"));
+        user.setEmail(session.getSessionString("KEY_EMAIL"));
+        Log.e("user :: ",user.toString());
+        Call<ReponseAPI> reponse = service.userService.sign2User(user);
+        Intent intent = null;
+        reponse.enqueue(new Callback<ReponseAPI>() {
+            @Override
+            public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
+                Log.e("status",response.body().getStatus().toString());
+                if(response.body().getStatus() == 200){
+                    message.setText("Code correct");
+                    message.setVisibility(View.VISIBLE);
+                }else{
+                    Log.e("Line Code :","Line 54 -- User Control.java");
+                    Log.e("Message Error", response.body().getStatus().toString());
+                    message.setText("intern Server Error");
+                    message.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ReponseAPI> call, Throwable t) {
+                Log.e("Line Code :","Line 54 -- User Control.java");
+                Log.e("Message Error",t.getMessage());
+                message.setText("intern Server Error");
+                message.setVisibility(View.VISIBLE);
             }
         });
     }

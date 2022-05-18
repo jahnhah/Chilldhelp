@@ -31,7 +31,7 @@ public class Sign1Activity extends AppCompatActivity {
     }
 
     private void init(){
-        this.btnNext = (Button) findViewById(R.id.sign1btnNext);
+        this.btnNext = (Button) findViewById(R.id.sign2btnNext);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,8 +41,12 @@ public class Sign1Activity extends AppCompatActivity {
         });
         this.btnBack = (Button) findViewById(R.id.sign1btnBack);
         btnBack.setOnClickListener(new GotoListener(this,LoginActivity.class));
-        this.message = (TextView) findViewById((R.id.textViewError));
+        this.message = (TextView) findViewById(R.id.textViewError);
         message.setVisibility(View.INVISIBLE);
+        this.nom = (EditText) findViewById(R.id.editTextNom);
+        this.prenom = (EditText) findViewById(R.id.editTextPrenom);
+        this.email = (EditText) findViewById(R.id.editTextEmail);
+        this.password = (EditText) findViewById(R.id.editTextCode);
     }
 
 }

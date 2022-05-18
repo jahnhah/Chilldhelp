@@ -3,18 +3,18 @@ package com.jahnhahcraven.childhelp.model.generic;
 import java.util.List;
 
 public class ReponseAPI {
-    private List<Object> data;
+    private Object data;
     private String message;
     private Integer status;
 
     public ReponseAPI() {
     }
 
-    public List<Object> getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(List<Object> data) {
+    public void setData(Object data) {
         this.data = data;
     }
 
