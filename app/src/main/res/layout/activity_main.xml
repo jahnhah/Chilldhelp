@@ -49,6 +49,12 @@
             android:layout_height="wrap_content"
             android:text="PUZZLE" />
 
+        <Button
+            android:id="@+id/btn_main_chiffre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHIFFRE" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

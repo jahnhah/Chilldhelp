@@ -1,6 +1,5 @@
 package com.jahnhahcraven.childhelp.view.home;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,7 +7,6 @@ import android.util.Log;
 import android.widget.ListView;
 
 import com.jahnhahcraven.childhelp.R;
-import com.jahnhahcraven.childhelp.fragment.buttonGroup.ButtonGroupAdapter;
 import com.jahnhahcraven.childhelp.model.GameType;
 import com.jahnhahcraven.childhelp.view.home.adapter.CardHomeAdapter;
 
@@ -41,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         GameType[] gameTypes=new GameType[]{
           new GameType(0,"LETTRE","https://cdn.pixabay.com/photo/2014/10/04/16/55/wooden-cubes-473703_960_720.jpg"),
           new GameType(1,"CHIFFRE","https://cdn.pixabay.com/photo/2019/02/22/19/03/numbers-4014181_960_720.jpg"),
-          new GameType(2,"CHIFFRE","https://cdn.pixabay.com/photo/2019/02/22/19/03/numbers-4014181_960_720.jpg")
+          new GameType(2,"PUZZLE","https://cdn.pixabay.com/photo/2015/03/01/16/52/puzzle-654957_960_720.jpg")
         };
         this.list_game=new ArrayList<>(Arrays.asList(gameTypes));
     }

@@ -11,7 +11,7 @@
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.121" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout-w1240dp/activity_login2.xml" value="0.12" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout-w936dp/activity_login2.xml" value="0.2" />
-        <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/activity_chiffre.xml" value="0.10989583333333333" />
+        <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/activity_chiffre.xml" value="0.2" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/activity_fullscreen.xml" value="0.1" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/activity_lettre.xml" value="0.152" />
@@ -28,9 +28,11 @@
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/fragment_text_button.xml" value="0.16" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/logo_animation.xml" value="0.1" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/text_block.xml" value="0.10989583333333333" />
+        <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/widget_chiffre_block.xml" value="0.10989583333333333" />
+        <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/widget_chiffre_button.xml" value="0.10989583333333333" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/widget_home_card.xml" value="0.2056159420289855" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/widget_level_card.xml" value="0.2056159420289855" />
-        <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/widget_text_block.xml" value="0.10989583333333333" />
+        <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/widget_text_block.xml" value="0.536" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/layout/widget_tile_card.xml" value="0.10989583333333333" />
       </map>
     </option>

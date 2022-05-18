@@ -30,7 +30,6 @@
             android:id="@+id/txt_widgetPuzzle_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1"
             android:textColor="@android:color/white"
             android:textSize="34sp" />
 

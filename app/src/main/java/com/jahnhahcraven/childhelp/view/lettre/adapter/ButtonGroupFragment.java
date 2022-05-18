@@ -1,10 +1,8 @@
-package com.jahnhahcraven.childhelp.fragment.buttonGroup;
+package com.jahnhahcraven.childhelp.view.lettre.adapter;
 
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
@@ -12,12 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.jahnhahcraven.childhelp.R;
-import com.jahnhahcraven.childhelp.fragment.ExampleFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,6 +61,19 @@ public class ButtonGroupFragment extends Fragment implements  ButtonGroupAdapter
         useAdapter = new ButtonGroupAdapter(getContext(),alphabet_use,this);
     }
 
+    int getNumCol(){
+        int size=alphabet_answer.size();
+        int sqrt=(int)Math.sqrt(size);
+        while (sqrt*sqrt<size){
+            size++;
+            sqrt=(int)Math.sqrt(size);
+        }
+        return sqrt;
+    }
+
+
+
+
     public void init_grid(View binding){
 //        get
         answerGrid=(GridView) binding.findViewById(R.id.grid_textButton_answer);
@@ -74,10 +82,13 @@ public class ButtonGroupFragment extends Fragment implements  ButtonGroupAdapter
         useAdapter.setIdentifier(1);
 //        set column
         answerGrid.setNumColumns(alphabet_answer.size());
-        useGrid.setNumColumns(alphabet_answer.size());
+        int numCol=(int)(getNumCol());
+        useGrid.setNumColumns(numCol);
 //        set adapter
         useGrid.setAdapter(useAdapter);
         answerGrid.setAdapter(answerAdapter);
+
+        Log.i("height",String.valueOf(answerGrid.getHeight()));
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)

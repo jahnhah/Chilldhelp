@@ -15,6 +15,7 @@ import com.jahnhahcraven.childhelp.controller.PostControl;
 import com.jahnhahcraven.childhelp.model.Post;
 import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
 import com.jahnhahcraven.childhelp.fragment.ExampleFragment;
+import com.jahnhahcraven.childhelp.view.chiffre.ChiffreActivity;
 import com.jahnhahcraven.childhelp.view.home.HomeActivity;
 import com.jahnhahcraven.childhelp.view.lettre.LettreActivity;
 import com.jahnhahcraven.childhelp.view.listener.GotoListener;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
     Button goToLettre;
     Button goToType;
     Button goToPuzzle;
+    Button goToChiffre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
 
         goToPuzzle=(Button) findViewById(R.id.btn_main_puzzle);
         goToPuzzle.setOnClickListener(new GotoListener(this, PuzzleActivity.class));
+
+        goToChiffre=(Button) findViewById(R.id.btn_main_chiffre);
+        goToChiffre.setOnClickListener(new GotoListener(this, ChiffreActivity.class));
     }
 
 //    load posts

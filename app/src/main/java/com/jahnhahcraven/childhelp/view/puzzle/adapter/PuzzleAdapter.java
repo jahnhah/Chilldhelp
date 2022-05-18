@@ -17,7 +17,7 @@ import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
 import com.jahnhahcraven.childhelp.R;
-import com.jahnhahcraven.childhelp.model.Tile;
+import com.jahnhahcraven.childhelp.model.puzzle.Tile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,8 +55,13 @@ public class PuzzleAdapter extends ArrayAdapter<Tile>{
         CardView card=(CardView) listitemView.findViewById(R.id.widget_tile_card);
         ImageView img=(ImageView) listitemView.findViewById(R.id.img_widgetPuzzle_bgImg);
         TextView text=(TextView) listitemView.findViewById(R.id.txt_widgetPuzzle_number);
-        Glide.with(getContext()).load(tile.getSrcUrl()).centerCrop().into(img);
-        text.setText(String.valueOf(tile.getNumero()));
+        img.setImageBitmap(tile.getImage());
+        if(tile.getImage()==null){
+            text.setText(String.valueOf(tile.getNumero()));
+        }else{
+            text.setText("");
+        }
+
         card.getLayoutParams().height=getColHeight();
 
         if(tile.getNumero()==-1){
@@ -103,7 +108,7 @@ public class PuzzleAdapter extends ArrayAdapter<Tile>{
             listTile.add(blankPos,listTile.get(position));
             listTile.remove(blankPos+1);
 
-            listTile.add(position,new Tile(-1,""));
+            listTile.add(position,new Tile(-1,null));
             listTile.remove(position+1);
 
             notifyDataSetChanged();

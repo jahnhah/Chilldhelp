@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--XML implementation of Card Layout-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_chiffre_button"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/bg_color"
+    app:cardCornerRadius="20dp">
+
+
+    <TextView
+        android:id="@+id/lbl_chiffre_nb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="34sp" />
+</androidx.cardview.widget.CardView>

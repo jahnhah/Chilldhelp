@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.jahnhahcraven.childhelp.R;
-import com.jahnhahcraven.childhelp.fragment.buttonGroup.ButtonGroupFragment;
+import com.jahnhahcraven.childhelp.view.lettre.adapter.ButtonGroupFragment;
 
 public class LettreActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class LettreActivity extends AppCompatActivity {
     ButtonGroupFragment buttonGroupFragment;
     Button btnValider;
     public void init(){
-        String alphabet="ITAOSY";
+        String alphabet="MANER";
         buttonGroupFragment=(ButtonGroupFragment) fragmentManager.findFragmentById(R.id.fragment_lettre_buttonGroup);
         buttonGroupFragment.setAlphabet(split(alphabet));
         btnValider=(Button) findViewById(R.id.btn_lettre_valider);

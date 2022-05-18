@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:orientation="vertical">
 
             <VideoView
@@ -41,7 +41,7 @@
 
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/fragment_lettre_buttonGroup"
-                    android:name="com.jahnhahcraven.childhelp.fragment.buttonGroup.ButtonGroupFragment"
+                    android:name="com.jahnhahcraven.childhelp.view.lettre.adapter.ButtonGroupFragment"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -51,42 +51,21 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="135dp"
                 android:layout_weight="1"
-                android:gravity="bottom"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <Button
                     android:id="@+id/btn_lettre_valider"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
                     android:text="VALIDER" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:gravity="bottom"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@android:drawable/ic_media_previous"
-                        tools:ignore="SpeakableTextPresentCheck" />
-
-                    <ImageButton
-                        android:id="@+id/imageButton2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@android:drawable/ic_media_next"
-                        tools:ignore="SpeakableTextPresentCheck" />
-
-                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

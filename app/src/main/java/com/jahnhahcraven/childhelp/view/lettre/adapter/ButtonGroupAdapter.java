@@ -1,8 +1,7 @@
-package com.jahnhahcraven.childhelp.fragment.buttonGroup;
+package com.jahnhahcraven.childhelp.view.lettre.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,20 +11,18 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 
 import com.jahnhahcraven.childhelp.R;
-import com.jahnhahcraven.childhelp.fragment.ExampleFragment;
-import com.jahnhahcraven.childhelp.view.MainActivity;
-import com.jahnhahcraven.childhelp.view.lettre.LettreActivity;
 
 import java.util.ArrayList;
 
 public class ButtonGroupAdapter extends ArrayAdapter<String> {
     int identifier;
+    ArrayList<String> alphabets;
     ButtonGroupAdapter.OnFragmentInteractionListener fListener;
     public ButtonGroupAdapter(@NonNull Context context, ArrayList<String> alphabets,ButtonGroupFragment fragment) {
         super(context,0, alphabets);
+        this.alphabets=alphabets;
         fListener=(ButtonGroupAdapter.OnFragmentInteractionListener) fragment;
     }
 
@@ -44,6 +41,10 @@ public class ButtonGroupAdapter extends ArrayAdapter<String> {
         String alphabet = getItem(position);
         Button button =(Button) listitemView.findViewById(R.id.btn_widget_text_block_alphabet);
         button.setText(alphabet);
+        if(identifier==1){
+            button.getLayoutParams().height=getButtonHeight();
+        }
+
         button.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View view){
                 fListener.onFragmentInteraction(identifier,position);
@@ -53,15 +54,34 @@ public class ButtonGroupAdapter extends ArrayAdapter<String> {
         return listitemView;
     }
 
+    private int getSceenWidth(){
+        return getContext().getResources().getDisplayMetrics().widthPixels;
+    }
+
+    private int getMargin(){
+        return 40;
+    }
+
+    private int getButtonHeight(){
+        int size=alphabets.size();
+        int sqrt=(int)Math.sqrt(size);
+        while (sqrt*sqrt<size){
+            size++;
+            sqrt=(int)Math.sqrt(size);
+        }
+        return (int)((getSceenWidth()-300)/(sqrt));
+    }
+
     public void setColor(Button button,int id) {
             button.setBackgroundColor(ContextCompat.getColor(getContext(), id));
     }
     public void setInitiaColor(Button button){
         if(identifier==0){
-            setColor(button,R.color.light_grey);
+            setColor(button,R.color.transparent);
         }
         else{
             setColor(button,R.color.bg_color);
+            button.setTextColor(Color.WHITE);
         }
 
     }
