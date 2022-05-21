@@ -13,7 +13,7 @@ const ROLES = []
 // sendMail
 
 exports.inscription = async (request,response) => {
-  console.log(request.body);
+  console.log(request);
   request.body.role = "user";
   const user = new User(request.body);
   user.password = bcrypt.hashSync(user.password, 8);
@@ -58,14 +58,20 @@ exports.verifyEmail = async (request,response) => {
     const token = jwt.sign({ id: user._id,role:user.role,activate:user.activate }, config.secret, {
       expiresIn: 86400, // 24 hours
     });
+    user.token = token;
     request.session.token = token;
-    const data = {
-      user:user,
-      token:token
-    }
-    response.status(200).send(data);
+    const data = user;
+    response.status(200).send({
+      message:"Code correct!",
+      status:200,
+      data:data
+    });
   } catch (error) {
-    response.status(500).send(error);
+    response.status(500).send({
+      message:"Code incorrect!",
+      status:400,
+      data:data
+    });
   }
 }
 
@@ -78,31 +84,41 @@ exports.verifyEmail = async (request,response) => {
 
 exports.login = async (request,response) => {
   try {
-    const user = await User.findOne({email:request.body.email});
-    if (!user) return response.status(404).send("Utilisateur non existant, Veuillez créer un compte!")
+    console.log(request.body);
+    let user = await User.findOne({email:request.body.email});
+    if (!user) return response.status(403).send({
+      status:403,
+      data:{},
+      message:"User not recognize , Please create your account"
+    })
     const passwordIsValid = bcrypt.compareSync(
       request.body.password,
       user.password
     );
-    if (!passwordIsValid) return response.status(404).send("Mot de passe incorrecte!");
+    if (!passwordIsValid) return response.status(404).send("Password incorrect!");
     const token = jwt.sign({ id: user._id,role:user.role ,activate:user.activate }, config.secret, {
       expiresIn: 86400, // 24 hours
     });
-    request.session.token = token
+    request.session.token = token;
+    user = {...user._doc,token:token};
     const data = {
-	status:200,
-      user:user,
-      token:token
+      status:200,
+      data:user,
+      message:"You are logged now!",
     }
     response.status(200).send(data);
   } catch (err) {
     console.log(err);
-    response.status(500).send(err);
+    response.status(500).send({
+      status:500,
+      data:{},
+      message:"Error : "+err
+    });
   }
 }
 
 // logout
-// delete token
+// delete token                                                                                                            ,,,,,,,,,,,,,
 exports.signout = async (req, res) => {
   try {
     req.session = null;
