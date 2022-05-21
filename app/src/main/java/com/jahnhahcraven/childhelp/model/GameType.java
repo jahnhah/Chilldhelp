@@ -1,22 +1,22 @@
 package com.jahnhahcraven.childhelp.model;
 
 public class GameType {
-    int id;
+    String _id;
     String name;
-    String srcUrl;
+    String image;
 
-    public GameType(int id, String name, String srcUrl) {
-        this.id = id;
+    public GameType(String _id, String name, String image) {
+        this._id = _id;
         this.name = name;
-        this.srcUrl = srcUrl;
+        this.image = image;
     }
 
-    public int getId() {
-        return id;
+    public String get_id() {
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getName() {
@@ -27,11 +27,11 @@ public class GameType {
         this.name = name;
     }
 
-    public String getSrcUrl() {
-        return srcUrl;
+    public String getImage() {
+        return image;
     }
 
-    public void setSrcUrl(String srcUrl) {
-        this.srcUrl = srcUrl;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

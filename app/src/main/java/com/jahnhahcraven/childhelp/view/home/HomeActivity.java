@@ -7,9 +7,13 @@ import android.util.Log;
 import android.widget.ListView;
 
 import com.jahnhahcraven.childhelp.R;
+
+import com.jahnhahcraven.childhelp.controller.HomeControl;
+
 import com.jahnhahcraven.childhelp.model.GameType;
 import com.jahnhahcraven.childhelp.view.home.adapter.CardHomeAdapter;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -18,30 +22,33 @@ public class HomeActivity extends AppCompatActivity {
     CardHomeAdapter cardHomeAdapter;
     ListView listView;
 
-    private void init(){
-        getSupportActionBar().hide();
-        loadGameType();
-        listView=(ListView) findViewById(R.id.listView_home_cardList);
-        cardHomeAdapter= new CardHomeAdapter(this, list_game);
-        listView.setAdapter(cardHomeAdapter);
-        listView.setDivider(this.getResources().getDrawable(R.color.transparent));
-        listView.setDividerHeight(20);
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         init();
-        Log.i("GameType",String.valueOf(list_game.size()));
     }
+
+    private void init(){
+        getSupportActionBar().hide();
+        listView=(ListView) findViewById(R.id.listView_home_cardList);
+        loadGameType();
+    }
+
+
 
     private void loadGameType(){
-        GameType[] gameTypes=new GameType[]{
-          new GameType(0,"LETTRE","https://cdn.pixabay.com/photo/2014/10/04/16/55/wooden-cubes-473703_960_720.jpg"),
-          new GameType(1,"CHIFFRE","https://cdn.pixabay.com/photo/2019/02/22/19/03/numbers-4014181_960_720.jpg"),
-          new GameType(2,"PUZZLE","https://cdn.pixabay.com/photo/2015/03/01/16/52/puzzle-654957_960_720.jpg")
-        };
-        this.list_game=new ArrayList<>(Arrays.asList(gameTypes));
+        HomeControl.getInstance().getGameType(this,listView);
+//        this.list_game=new ArrayList<>(Arrays.asList(gameTypes));
     }
 
+    public ArrayList<GameType> getList_game() {
+        Log.e("lis",list_game.toString());
+        return list_game;
+    }
+
+    public void setList_game(ArrayList<GameType> list_game) {
+        this.list_game = list_game;
+    }
 }

@@ -1,5 +1,11 @@
 package com.jahnhahcraven.childhelp.model.generic;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.jahnhahcraven.childhelp.model.User;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReponseAPI {
@@ -32,5 +38,14 @@ public class ReponseAPI {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public ArrayList fomraterArrayJSONObject(ArrayList<Object> jsonType, Class classes){
+        Gson gson = new Gson();
+        for (int counter = 0; counter < jsonType.size(); counter++) {
+            Object obj = gson.fromJson(gson.toJson(jsonType.get(counter)),classes);
+            jsonType.set(counter,obj);
+        }
+        return jsonType;
     }
 }

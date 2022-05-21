@@ -38,7 +38,8 @@ public class CardHomeAdapter extends ArrayAdapter<GameType> {
         CardView card = (CardView) listitemView.findViewById(R.id.widget_home_card);
         ImageView img = (ImageView) listitemView.findViewById(R.id.img_widgetHome_bgImg);
         TextView text = (TextView) listitemView.findViewById(R.id.txt_widgetHome_name);
-        Glide.with(getContext()).load(game.getSrcUrl()).centerCrop().into(img);
+        Glide.with(getContext()).load(game.getImage()).centerCrop().into(img);
+        Log.e("49",game.getName().toString());
         text.setText(game.getName());
         GotoListener listener = new GotoListener((HomeActivity) getContext(), LevelActivity.class);
         listener.setMessage(game.getName());

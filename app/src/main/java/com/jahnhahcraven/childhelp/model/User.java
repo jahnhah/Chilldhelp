@@ -1,13 +1,14 @@
 package com.jahnhahcraven.childhelp.model;
 
 public class User {
-    String id;
+    String _id;
     String username;
     String email;
     String password;
     String code;
     String role;
     String activate;
+    String token;
 
     public User() {
     }
@@ -18,11 +19,19 @@ public class User {
         this.password = password;
     }
 
-    public User(String id, String username, String email, String password) {
-        this.id = id;
+    public User(String _id, String username, String email, String password) {
+        this._id = _id;
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getRole() {
@@ -41,12 +50,12 @@ public class User {
         this.activate = activate;
     }
 
-    public String getId() {
-        return id;
+    public String get_id() {
+        return _id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getUsername() {
@@ -84,7 +93,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
+                "id='" + _id + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +

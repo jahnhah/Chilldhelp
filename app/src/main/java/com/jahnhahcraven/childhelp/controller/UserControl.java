@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.gson.internal.LinkedTreeMap;
 import com.jahnhahcraven.childhelp.model.LoginRequest;
 import com.jahnhahcraven.childhelp.model.LoginResponse;
 import com.jahnhahcraven.childhelp.model.Post;
@@ -24,15 +25,18 @@ import com.jahnhahcraven.childhelp.view.SplashActivity;
 import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Future;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import com.google.gson.Gson;
+
 public class UserControl {
     private static UserControl instance;
-    private BaseService service = BaseService.getInstance();
+    private static BaseService service = BaseService.getInstance();
     private SessionManager sessionManager;
 
     public static UserControl getInstance(){
@@ -40,10 +44,6 @@ public class UserControl {
             UserControl.instance=new UserControl();
         }
         return UserControl.instance;
-    }
-
-    public Call<LoginResponse> login(String email, String mdp){
-        return service.userService.login(new LoginRequest(email,mdp));
     }
 
     public void sign1Feature(Button ciblé, TextView message , Activity pageRecent, Class redirection, User object){
@@ -76,7 +76,6 @@ public class UserControl {
         });
     }
 
-
     public void sign2Feature(Button ciblé, TextView message , Activity pageRecent, Class redirection, User user){
         Log.e("code:",user.toString());
         SessionManager session = new SessionManager(pageRecent);
@@ -88,13 +87,13 @@ public class UserControl {
         reponse.enqueue(new Callback<ReponseAPI>() {
             @Override
             public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
-                Log.e("status",response.body().getStatus().toString());
+                //Log.e("status",response.body().getStatus().toString());
                 if(response.body().getStatus() == 200){
                     message.setText("Code correct");
                     message.setVisibility(View.VISIBLE);
                 }else{
-                    Log.e("Line Code :","Line 54 -- User Control.java");
-                    Log.e("Message Error", response.body().getStatus().toString());
+                    //Log.e("Line Code :","Line 54 -- User Control.java");
+                    //Log.e("Message Error", response.body().getStatus().toString());
                     message.setText("intern Server Error");
                     message.setVisibility(View.VISIBLE);
                 }
@@ -102,17 +101,47 @@ public class UserControl {
 
             @Override
             public void onFailure(Call<ReponseAPI> call, Throwable t) {
-                Log.e("Line Code :","Line 54 -- User Control.java");
-                Log.e("Message Error",t.getMessage());
+                // Log.e("Line Code :","Line 54 -- User Control.java");
+                // Log.e("Message Error",t.getMessage());
                 message.setText("intern Server Error");
                 message.setVisibility(View.VISIBLE);
             }
         });
     }
 
-    public void saveToken(Context context,String token){
-        sessionManager=new SessionManager(context);
-        sessionManager.saveAuthToken(token);
+    public void login(Button ciblé,TextView message,Activity pageRecent,Class redirect,User user){
+        Call<ReponseAPI> reponse  = service.userService.login(user);
+        Intent intent = null;
+        reponse.enqueue(new Callback<ReponseAPI>() {
+            @Override
+            public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
+                Log.e("status",response.body().getStatus().toString());
+                if(response.body().getStatus() == 200){
+                    Intent intent  = new Intent(pageRecent, redirect);
+                    SessionManager session = new SessionManager(pageRecent);
+                    Gson gson = new Gson();
+                    User utilisateur = (User) gson.fromJson(gson.toJson(response.body().getData()),User.class);
+                    session.setSessionObject("KEY_USER",utilisateur);
+                    pageRecent.startActivity(intent);
+                    message.setText("User connected");
+                    message.setVisibility(View.VISIBLE);
+                }else{
+                    //Log.e("Line Code :","Line 54 -- User Control.java");
+                    //Log.e("Message Error", response.body().getStatus().toString());
+                    message.setText("internal Server Error");
+                    message.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ReponseAPI> call, Throwable t) {
+                // Log.e("Line Code :","Line 54 -- User Control.java");
+                // Log.e("Message Error",t.getMessage());
+                message.setText("intern Server Error");
+                message.setVisibility(View.VISIBLE);
+            }
+        });
     }
+
 
 }
