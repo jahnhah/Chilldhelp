@@ -29,7 +29,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void init(){
-        getSupportActionBar().hide();
         listView=(ListView) findViewById(R.id.listView_home_cardList);
         loadGameType();
     }
