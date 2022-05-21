@@ -25,7 +25,6 @@ public class ChiffreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chiffre);
         loadChiffre();
         init();
-        getSupportActionBar().hide();
     }
 
     void loadChiffre(){

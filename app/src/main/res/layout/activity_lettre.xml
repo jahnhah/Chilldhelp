@@ -62,9 +62,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:background="@color/bg_color"
                     android:paddingLeft="50dp"
                     android:paddingRight="50dp"
-                    android:text="VALIDER" />
+                    android:text="VALIDER"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 

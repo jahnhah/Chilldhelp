@@ -73,14 +73,14 @@ public class ButtonGroupAdapter extends ArrayAdapter<String> {
     }
 
     public void setColor(Button button,int id) {
-            button.setBackgroundColor(ContextCompat.getColor(getContext(), id));
+            button.setBackground(ContextCompat.getDrawable(getContext(),id));
     }
     public void setInitiaColor(Button button){
         if(identifier==0){
-            setColor(button,R.color.transparent);
+            setColor(button,R.drawable.button_gray);
         }
         else{
-            setColor(button,R.color.bg_color);
+            setColor(button,R.drawable.button_blue);
             button.setTextColor(Color.WHITE);
         }
 

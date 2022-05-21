@@ -26,7 +26,6 @@ public class Sign1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign1);
-        getSupportActionBar().hide();
         init();
     }
 

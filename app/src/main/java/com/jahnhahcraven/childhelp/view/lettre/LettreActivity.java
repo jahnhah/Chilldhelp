@@ -2,6 +2,7 @@ package com.jahnhahcraven.childhelp.view.lettre;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Build;
@@ -24,6 +25,7 @@ public class LettreActivity extends AppCompatActivity {
         buttonGroupFragment=(ButtonGroupFragment) fragmentManager.findFragmentById(R.id.fragment_lettre_buttonGroup);
         buttonGroupFragment.setAlphabet(split(alphabet));
         btnValider=(Button) findViewById(R.id.btn_lettre_valider);
+        btnValider.setBackgroundColor(ContextCompat.getColor(this,R.color.bg_color));
         addSubmitListener(btnValider);
     }
 

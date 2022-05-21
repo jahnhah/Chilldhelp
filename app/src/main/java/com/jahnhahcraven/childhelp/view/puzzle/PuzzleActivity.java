@@ -29,7 +29,6 @@ public class PuzzleActivity extends AppCompatActivity {
     ArrayList<Bitmap> bitmapArrayList;
 
     private void init() {
-        getSupportActionBar().hide();
         gridView = (GridView) findViewById(R.id.grid_puzzle_board);
     }
 
@@ -76,7 +75,7 @@ public class PuzzleActivity extends AppCompatActivity {
     }
 
     private void loadPuzzle() {
-        String img_src = "https://cdn.pixabay.com/photo/2016/11/22/23/44/porsche-1851246_960_720.jpg";
+        String img_src = "https://cdn.pixabay.com/photo/2021/12/19/12/27/road-6881040_960_720.jpg";
         Level level = new Level(1, 1);
         this.puzzle = new Puzzle(1, level, fakeTiles(), img_src);
         Log.i("count2",String.valueOf(fakeTiles().size()));

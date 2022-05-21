@@ -55,6 +55,12 @@
             android:layout_height="wrap_content"
             android:text="CHIFFRE" />
 
+        <Button
+            android:id="@+id/btn_main_preference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preference" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,9 +21,7 @@ public class HomeActivity extends AppCompatActivity {
     ArrayList<GameType> list_game;
     CardHomeAdapter cardHomeAdapter;
     ListView listView;
-
-
-    @Override
+@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);

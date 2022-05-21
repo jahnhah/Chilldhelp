@@ -10,7 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ChildHelp">
+        android:theme="@style/Theme.Light">
+        <activity
+            android:name=".view.preference.PreferenceActivity"
+            android:exported="false" />
         <activity
             android:name=".view.chiffre.ChiffreActivity"
             android:exported="false" />
