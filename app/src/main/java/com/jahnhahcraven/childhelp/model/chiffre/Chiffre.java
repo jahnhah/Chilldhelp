@@ -1,49 +1,32 @@
 package com.jahnhahcraven.childhelp.model.chiffre;
 
+import com.jahnhahcraven.childhelp.model.Game;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Chiffre {
-    int id;
-    String videoUrl;
-    String question;
-    List<Double> answers;
+public class Chiffre extends Game {
+    double result;
+    ArrayList<Double> number_game;
 
-    public Chiffre(int id, String videoUrl, String question, List<Double> answers) {
-        this.id = id;
-        this.videoUrl = videoUrl;
-        this.question = question;
-        this.answers = answers;
+    public Chiffre(double result, ArrayList<Double> number_game) {
+        this.result = result;
+        this.number_game = number_game;
     }
 
-    public int getId() {
-        return id;
+    public double getResult() {
+        return result;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setResult(double result) {
+        this.result = result;
     }
 
-    public String getVideoUrl() {
-        return videoUrl;
+    public ArrayList<Double> getNumber_game() {
+        return number_game;
     }
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public List<Double> getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(List<Double> answers) {
-        this.answers = answers;
+    public void setNumber_game(ArrayList<Double> number_game) {
+        this.number_game = number_game;
     }
 }

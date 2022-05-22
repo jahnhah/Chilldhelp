@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Light">
         <activity
+            android:name=".view.menu.settingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.preference.PreferenceActivity"
             android:exported="false" />
         <activity

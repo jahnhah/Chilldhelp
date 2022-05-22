@@ -6,22 +6,22 @@ import android.os.Bundle;
 import android.widget.GridView;
 
 import com.jahnhahcraven.childhelp.R;
+import com.jahnhahcraven.childhelp.controller.LevelControl;
+import com.jahnhahcraven.childhelp.model.Game;
 import com.jahnhahcraven.childhelp.model.Level;
 import com.jahnhahcraven.childhelp.view.level.adapter.LevelAdapter;
 
 import java.util.ArrayList;
 
 public class LevelActivity extends AppCompatActivity {
-    ArrayList<Level> listLevel;
+    ArrayList<Game> listLevel;
     LevelAdapter levelAdapter;
     GridView gridView;
 
     void init(){
-        loadLevel();
         gridView=(GridView) findViewById(R.id.grid_level_gridLevel);
         gridView.setNumColumns(3);
-        levelAdapter=new LevelAdapter(this,listLevel);
-        gridView.setAdapter(levelAdapter);
+        loadLevel();
     }
 
     @Override
@@ -32,10 +32,190 @@ public class LevelActivity extends AppCompatActivity {
     }
 
     private void loadLevel(){
-        listLevel=new ArrayList<Level>();
+        LevelControl.getInstance().getLevelGame(this,gridView);
+        listLevel=new ArrayList<Game>();
         for(int i=0;i<10;i++){
-            listLevel.add(new Level(i,i));
+            Game item = new Game();
+            item.setLevel(i);
+            listLevel.add(item  );
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

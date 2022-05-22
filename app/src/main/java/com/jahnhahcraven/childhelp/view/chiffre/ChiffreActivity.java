@@ -34,17 +34,17 @@ public class ChiffreActivity extends AppCompatActivity {
         for(int i=0;i<4;i++){
             answers.add(Math.random());
         }
-        chiffre=new Chiffre(1,videoUrl,question,answers);
+//        chiffre=new Chiffre(1,videoUrl,question,answers);
 
     }
 
     void init(){
-        chiffreAdapter=new ButtonChiffreAdapter(this,(ArrayList<Double>) chiffre.getAnswers());
+//        chiffreAdapter=new ButtonChiffreAdapter(this,(ArrayList<Double>) chiffre.getAnswers());
         gridView=findViewById(R.id.grid_chiffre_answerGrid);
-        gridView.setNumColumns(this.chiffre.getAnswers().size()/2);
+//        gridView.setNumColumns(this.chiffre.getAnswers().size()/2);
         gridView.setAdapter(chiffreAdapter);
 
         TextView question=(TextView) findViewById(R.id.lbl_chiffreActivity_question);
-        question.setText(chiffre.getQuestion());
+//        question.setText(chiffre.getQuestion());
     }
 }

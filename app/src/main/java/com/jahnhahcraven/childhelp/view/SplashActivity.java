@@ -5,8 +5,10 @@ import android.annotation.SuppressLint;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,7 +22,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.jahnhahcraven.childhelp.R;
+import com.jahnhahcraven.childhelp.model.User;
+import com.jahnhahcraven.childhelp.model.sessionManager.SessionManager;
 import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
+import com.jahnhahcraven.childhelp.view.home.HomeActivity;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -46,7 +51,16 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 //                Intent intent  = new Intent(SplashActivity.this, LoginActivity.class);
-                Intent intent  = new Intent(SplashActivity.this, LoginActivity.class);
+                SessionManager session = new SessionManager(SplashActivity.this);
+                Class aRedirect  = LoginActivity.class;
+                User utilisateur = (User) session.getSessionObject("KEY_USER", User.class);
+                String mode = session.getSessionString("MODE")+"";
+                setMode(mode);
+                if (utilisateur.getToken().length() !=0){
+                    aRedirect = HomeActivity.class;
+                }
+                Intent intent  = new Intent(SplashActivity.this,aRedirect);
+
                 startActivity(intent);
                 finish();
             }
@@ -60,6 +74,14 @@ public class SplashActivity extends AppCompatActivity {
     private void initLogoAnimation(){
         Animation aniSlide = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.animation_logo);
         imgLogo.startAnimation(aniSlide);
+    }
+
+    private void setMode(String mode){
+        if (mode.compareTo("NIGHT") == 0){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            return;
+        }
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
 
 

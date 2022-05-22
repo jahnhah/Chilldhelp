@@ -53,7 +53,7 @@ public class PuzzleActivity extends AppCompatActivity {
     private List<Tile> updatedTile() {
         ArrayList<Tile>tiles=(ArrayList<Tile>) this.puzzle.getTileList();
         int count=tiles.size();
-        tiles= ImageSplitter.splitImage(this,tiles,puzzle.getImgUrl(),count);
+        tiles= ImageSplitter.splitImage(this,tiles,puzzle.getMedia(),count);
 
         return tiles;
     }
@@ -77,7 +77,8 @@ public class PuzzleActivity extends AppCompatActivity {
     private void loadPuzzle() {
         String img_src = "https://cdn.pixabay.com/photo/2021/12/19/12/27/road-6881040_960_720.jpg";
         Level level = new Level(1, 1);
-        this.puzzle = new Puzzle(1, level, fakeTiles(), img_src);
+        this.puzzle = new Puzzle("banane", 4, fakeTiles());
+        puzzle.setMedia(img_src);
         Log.i("count2",String.valueOf(fakeTiles().size()));
         this.puzzle.setTileList(updatedTile());
     }
