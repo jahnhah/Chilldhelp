@@ -13,7 +13,7 @@ const config = require('../config/db.config.js').dbConfig;
 
 // dev
 mongoose.connect(
-  `mongodb://localhost:27017/i-asa`, 
+  `mongodb+srv://chlidhelp:1234@childhelp.jqx5m.mongodb.net/?retryWrites=true&w=majority`, 
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
