@@ -1,11 +1,13 @@
 const GameType = require("../models/gameType.model.js");
 const Game = require("../models/game.model.js");
+const { Console } = require("console");
 
 
 
 // Liste Game Type -------------------------------------------------
 
 exports.listGameType = async (request,response) => {
+    console.log(request.body);
     try {
         const doc = await GameType.find();
         if (doc[0] instanceof GameType){
