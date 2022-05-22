@@ -1,5 +1,6 @@
 package com.jahnhahcraven.childhelp.view.auth;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,8 @@ import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.UserControl;
 import com.jahnhahcraven.childhelp.model.LoginResponse;
 import com.jahnhahcraven.childhelp.model.User;
+import com.jahnhahcraven.childhelp.model.sessionManager.SessionManager;
+import com.jahnhahcraven.childhelp.view.SplashActivity;
 import com.jahnhahcraven.childhelp.view.home.HomeActivity;
 import com.jahnhahcraven.childhelp.view.listener.GotoListener;
 
@@ -55,6 +58,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 
 
 }

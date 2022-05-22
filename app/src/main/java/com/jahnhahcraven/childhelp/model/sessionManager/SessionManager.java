@@ -67,4 +67,9 @@ public class SessionManager {
         return this.sharedPreferences.getBoolean(key,false);
     }
 
+    public void removeSession(){
+        this.editor.clear();
+        this.editor.commit();
+    }
+
 }

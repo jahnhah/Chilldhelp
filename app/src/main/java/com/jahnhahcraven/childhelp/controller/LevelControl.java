@@ -51,7 +51,7 @@ public class LevelControl {
                 if(response.body().getStatus() == 200){
                     ArrayList<Game> array =  new ReponseAPI().fomraterArrayJSONObject((ArrayList<Object>) response.body().getData(),Game.class);
                     Log.e("ok 200: ","ok ça marche"+response.body().getData().toString());
-                    LevelAdapter levelAdapter=new LevelAdapter(page,array);
+                    LevelAdapter levelAdapter = new LevelAdapter(page,array);
                     gridView.setAdapter(levelAdapter);
                 }else{
                     Log.e("status errot type : ",response.body().getMessage());
@@ -60,7 +60,6 @@ public class LevelControl {
 
             @Override
             public void onFailure(Call<ReponseAPI> call, Throwable t) {
-//                Mi afficher modal eto
                 Log.e("Line 48 -- HomeControl",t.getMessage());
             }
         });

@@ -31,6 +31,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.26'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.code.gson:gson:2.8.8'
     implementation 'com.google.android.material:material:1.6.0'

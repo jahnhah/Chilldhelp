@@ -10,29 +10,56 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:orientation="vertical">
 
-        <Switch
-            android:id="@+id/switch_preference_darkModeSwitch"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="100dp"
-            android:text="Dark Mode"
-            android:textSize="24sp"
-            android:thumb="@drawable/thumb"
-            android:track="@drawable/track" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
 
-        <Switch
-            android:id="@+id/switch_preference_notification"
+            <Switch
+                android:id="@+id/switch_preference_darkModeSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:text="Dark Mode"
+                android:textSize="24sp"
+                android:thumb="@drawable/thumb"
+                android:track="@drawable/track" />
+
+            <Switch
+                android:id="@+id/switch_preference_notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:text="Allow notification"
+                android:textSize="24sp"
+                android:thumb="@drawable/thumb"
+                android:track="@drawable/track" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="100dp"
-            android:text="Allow notification"
-            android:textSize="24sp"
-            android:thumb="@drawable/thumb"
-            android:track="@drawable/track" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical">
 
+            <Button
+                android:id="@+id/button_preference_signout"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/bg_color"
+                android:text="LOG OUT" />
+        </LinearLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

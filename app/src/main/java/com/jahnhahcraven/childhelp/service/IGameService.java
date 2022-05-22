@@ -16,4 +16,8 @@ public interface IGameService {
 
     @POST("/game/gameLevel")
     Call<ReponseAPI> getAllGameLevel(@Header("token") String token, @Body() Game game);
+
+    @POST("/game/gameStart")
+    Call<ReponseAPI> getGame(@Header("token") String token, @Body() Game game);
+
 }

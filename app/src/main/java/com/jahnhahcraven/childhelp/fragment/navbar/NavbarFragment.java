@@ -1,10 +1,12 @@
 package com.jahnhahcraven.childhelp.fragment.navbar;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.UserControl;
 import com.jahnhahcraven.childhelp.model.User;
+import com.jahnhahcraven.childhelp.model.sessionManager.SessionManager;
 import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
 import com.jahnhahcraven.childhelp.view.home.HomeActivity;
 import com.jahnhahcraven.childhelp.view.listener.GotoListener;
@@ -43,4 +46,7 @@ public class NavbarFragment extends Fragment {
         settingIcons = view.findViewById(R.id.imageView3);
         settingIcons.setOnClickListener(new GotoListener((Activity) getContext(), PreferenceActivity.class));
     }
+
+
+
 }

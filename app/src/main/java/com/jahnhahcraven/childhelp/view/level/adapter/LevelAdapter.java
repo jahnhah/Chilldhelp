@@ -18,9 +18,11 @@ import com.bumptech.glide.Glide;
 import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.model.Game;
 import com.jahnhahcraven.childhelp.model.Level;
+import com.jahnhahcraven.childhelp.view.chiffre.ChiffreActivity;
 import com.jahnhahcraven.childhelp.view.level.LevelActivity;
 import com.jahnhahcraven.childhelp.view.listener.GotoListener;
 import com.jahnhahcraven.childhelp.view.lettre.LettreActivity;
+import com.jahnhahcraven.childhelp.view.puzzle.PuzzleActivity;
 
 import java.util.ArrayList;
 
@@ -33,17 +35,37 @@ public class LevelAdapter extends ArrayAdapter<Game> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listitemView = convertView;
-        if (listitemView == null) {
-            // Layout Inflater inflates each item to be displayed in GridView.
-            listitemView = LayoutInflater.from(getContext()).inflate(R.layout.widget_level_card, parent, false);
+        try {
+            if (listitemView == null) {
+                // Layout Inflater inflates each item to be displayed in GridView.
+                listitemView = LayoutInflater.from(getContext()).inflate(R.layout.widget_level_card, parent, false);
+            }
+            Game level = getItem(position);
+            CardView card=(CardView) listitemView.findViewById(R.id.widget_level_card);
+            TextView text=(TextView) listitemView.findViewById(R.id.txt_widgetLevel_name);
+            text.setText(String.valueOf(level.getLevel()));
+            card.setOnClickListener(new GotoListener((LevelActivity)getContext(),getGameRedirect(level.getGametype()),level.get_id()));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        Game level = getItem(position);
-        CardView card=(CardView) listitemView.findViewById(R.id.widget_level_card);
-        TextView text=(TextView) listitemView.findViewById(R.id.txt_widgetLevel_name);
-        text.setText(String.valueOf(level.getLevel()));
-        card.setOnClickListener(new GotoListener((LevelActivity)getContext(),LettreActivity.class));
-
         return listitemView;
+
+    }
+
+    private Class getGameRedirect(String gametype) throws Exception {
+        if (gametype.toLowerCase().compareTo("puzzle")==0){
+            return PuzzleActivity.class;
+        }
+
+        if (gametype.toLowerCase().compareTo("letter")==0){
+            return LettreActivity.class;
+        }
+
+        if (gametype.toLowerCase().compareTo("number")==0){
+            return ChiffreActivity.class;
+        }
+
+        throw new Exception("type game not exist!");
     }
 
 }

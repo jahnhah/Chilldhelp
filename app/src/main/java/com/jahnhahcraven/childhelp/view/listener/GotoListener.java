@@ -13,9 +13,16 @@ public class GotoListener implements View.OnClickListener {
     private String message;
 
 
+
     public GotoListener(Activity current,Class toShow) {
         this.currentActivity=current;
         this.toShowClass=toShow;
+    }
+
+    public GotoListener(Activity currentActivity, Class toShowClass, String message) {
+        this.currentActivity = currentActivity;
+        this.toShowClass = toShowClass;
+        this.message = message;
     }
 
     public void setMessage(String message){
@@ -31,7 +38,6 @@ public class GotoListener implements View.OnClickListener {
             Bundle bundle = new Bundle();
             bundle.putString("params",message);
             intent.putExtras(bundle);
-            Log.i("Intent","Bundle ajouter");
         }
         currentActivity.startActivity(intent);
     }

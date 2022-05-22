@@ -57,7 +57,7 @@ public class SplashActivity extends AppCompatActivity {
                 User utilisateur = (User) session.getSessionObject("KEY_USER", User.class);
                 String mode = session.getSessionString("MODE")+"";
                 setMode(mode);
-                if (utilisateur.getToken().length() !=0){
+                if (utilisateur != null && utilisateur.getToken().length() !=0){
                     aRedirect = HomeActivity.class;
                 }
                 Intent intent  = new Intent(SplashActivity.this,aRedirect);

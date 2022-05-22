@@ -123,8 +123,7 @@ public class UserControl {
                     User utilisateur = (User) gson.fromJson(gson.toJson(response.body().getData()),User.class);
                     session.setSessionObject("KEY_USER",utilisateur);
                     pageRecent.startActivity(intent);
-                    message.setText("User connected");
-                    message.setVisibility(View.VISIBLE);
+                    pageRecent.finish();
                 }else{
                     //Log.e("Line Code :","Line 54 -- User Control.java");
                     //Log.e("Message Error", response.body().getStatus().toString());

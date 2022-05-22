@@ -17,10 +17,15 @@
             android:layout_weight="2"
             android:orientation="vertical">
 
-            <VideoView
-                android:id="@+id/videoView"
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/video_letter_youtube"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:videoId="2Y2vuuFderY"
+                app:autoPlay="false"
+            />
+
+
 
         </LinearLayout>
 
