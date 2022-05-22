@@ -82,4 +82,9 @@ public class PuzzleActivity extends AppCompatActivity {
         Log.i("count2",String.valueOf(fakeTiles().size()));
         this.puzzle.setTileList(updatedTile());
     }
+
+
+
+
+
 }

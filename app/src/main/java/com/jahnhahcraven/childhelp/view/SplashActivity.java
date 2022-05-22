@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.model.User;
 import com.jahnhahcraven.childhelp.model.sessionManager.SessionManager;
+
 import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
 import com.jahnhahcraven.childhelp.view.home.HomeActivity;
 
@@ -50,7 +51,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-//                Intent intent  = new Intent(SplashActivity.this, LoginActivity.class);
+
                 SessionManager session = new SessionManager(SplashActivity.this);
                 Class aRedirect  = LoginActivity.class;
                 User utilisateur = (User) session.getSessionObject("KEY_USER", User.class);
@@ -61,6 +62,8 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 Intent intent  = new Intent(SplashActivity.this,aRedirect);
 
+
+//                Intent intent  = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

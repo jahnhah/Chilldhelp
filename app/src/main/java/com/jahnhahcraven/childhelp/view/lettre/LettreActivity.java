@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.jahnhahcraven.childhelp.R;
+import com.jahnhahcraven.childhelp.fragment.level.LevelFragment;
 import com.jahnhahcraven.childhelp.view.lettre.adapter.ButtonGroupFragment;
 
 public class LettreActivity extends AppCompatActivity {
@@ -36,7 +37,8 @@ public class LettreActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String answer=buttonGroupFragment.getAnswer();
-                Toast.makeText(LettreActivity.this,answer,Toast.LENGTH_LONG).show();
+                LevelFragment levelFragment = new LevelFragment ();
+                levelFragment.show(fragmentManager, "Sample Fragment");
             }
         });
     }

@@ -116,4 +116,12 @@ public class PuzzleAdapter extends ArrayAdapter<Tile>{
         }
     }
 
+    private boolean checkArrange(){
+        for(int i=1;i<listTile.size()-1;i++){
+            if(listTile.get(i)!=listTile.get(i-1)){
+                return false;
+            }
+        }
+        return true;
+    }
 }

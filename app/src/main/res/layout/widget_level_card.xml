@@ -7,10 +7,18 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:layout_gravity="center"
-    android:text="A"
     android:textSize="14sp"
-    app:cardBackgroundColor="@color/bg_color"
-    app:cardCornerRadius="30dp">
+    app:cardBackgroundColor="#6F089AFB"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/brain"
+        app:tint="#93AEFF" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,12 +34,6 @@
             android:text="1"
             android:textColor="@color/white"
             android:textSize="34sp" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="85dp"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
 
     </LinearLayout>
 

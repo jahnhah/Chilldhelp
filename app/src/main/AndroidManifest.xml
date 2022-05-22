@@ -11,6 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Light">
+        <service
+            android:name=".service.NotificationService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action
+                    android:name = "app.jahnhahcraven.com.childhelp.NotificationService" />
+                <category android:name = "android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".view.menu.settingsActivity"
             android:exported="false" />

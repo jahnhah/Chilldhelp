@@ -3,6 +3,10 @@ package com.jahnhahcraven.childhelp.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,11 +17,13 @@ import android.widget.Toast;
 import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.PostControl;
 import com.jahnhahcraven.childhelp.model.Post;
+import com.jahnhahcraven.childhelp.service.NotificationService;
 import com.jahnhahcraven.childhelp.view.auth.LoginActivity;
 import com.jahnhahcraven.childhelp.fragment.ExampleFragment;
 import com.jahnhahcraven.childhelp.view.chiffre.ChiffreActivity;
 import com.jahnhahcraven.childhelp.view.home.HomeActivity;
 import com.jahnhahcraven.childhelp.view.lettre.LettreActivity;
+import com.jahnhahcraven.childhelp.view.level.LevelActivity;
 import com.jahnhahcraven.childhelp.view.listener.GotoListener;
 import com.jahnhahcraven.childhelp.view.preference.PreferenceActivity;
 import com.jahnhahcraven.childhelp.view.puzzle.PuzzleActivity;
@@ -40,9 +46,12 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
     Button goToPuzzle;
     Button goToChiffre;
     Button goToPreference;
+    Button goToLevel;
+    Button btnNotification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         Log.i("init test","Init test");
         init();
@@ -72,7 +81,35 @@ public class MainActivity extends AppCompatActivity implements ExampleFragment.O
 
         goToPreference=(Button) findViewById(R.id.btn_main_preference);
         goToPreference.setOnClickListener(new GotoListener(this, PreferenceActivity.class));
+
+        goToLevel=(Button) findViewById(R.id.btn_main_level);
+        goToLevel.setOnClickListener(new GotoListener(this, LevelActivity.class));
+
+        btnNotification=(Button) findViewById(R.id.btn_main_notification);
+        btnNotification.setOnClickListener(notifListener);
     }
+
+    private View.OnClickListener notifListener=new Button.OnClickListener(){
+
+        @Override
+        public void onClick(View view) {
+            String tittle="title";
+            String subject="subject";
+            String body="body";
+
+            NotificationManager notif=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+            Notification notify=new Notification.Builder
+                    (getApplicationContext())
+                    .setContentTitle(tittle)
+                    .setContentText(body)
+                    .setSmallIcon(R.drawable.icon)
+                    .build();
+
+            notify.flags |= Notification.FLAG_AUTO_CANCEL;
+            notif.notify(0, notify);
+        }
+    };
+
 
 //    load posts
     private void loadPosts(){

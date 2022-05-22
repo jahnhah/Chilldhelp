@@ -61,6 +61,18 @@
             android:layout_height="wrap_content"
             android:text="Preference" />
 
+        <Button
+            android:id="@+id/btn_main_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Level" />
+
+        <Button
+            android:id="@+id/btn_main_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notification" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
