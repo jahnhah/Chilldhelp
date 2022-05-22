@@ -15,6 +15,7 @@ import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
 import com.jahnhahcraven.childhelp.R;
+import com.jahnhahcraven.childhelp.fragment.ExampleFragment;
 import com.jahnhahcraven.childhelp.model.GameType;
 import com.jahnhahcraven.childhelp.view.home.HomeActivity;
 import com.jahnhahcraven.childhelp.view.level.LevelActivity;
@@ -23,8 +24,10 @@ import com.jahnhahcraven.childhelp.view.listener.GotoListener;
 import java.util.ArrayList;
 
 public class ButtonChiffreAdapter extends ArrayAdapter<Double> {
+    OnChiffreInteractionListener cardListener;
     public ButtonChiffreAdapter(@NonNull Context context, ArrayList<Double> listNb) {
         super(context, 0, listNb);
+        cardListener=(ButtonChiffreAdapter.OnChiffreInteractionListener) context;
     }
 
     @NonNull
@@ -36,10 +39,21 @@ public class ButtonChiffreAdapter extends ArrayAdapter<Double> {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.widget_chiffre_block, parent, false);
         }
         Double nb= getItem(position);
-        CardView btn=(CardView) listitemView.findViewById(R.id.card_chiffre_button);
+        CardView card=(CardView) listitemView.findViewById(R.id.card_chiffre_button);
         TextView lbl=(TextView) listitemView.findViewById(R.id.lbl_chiffre_nb);
         lbl.setText(String.format("%,.2f", nb));
 
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardListener.onFragmentInteraction(nb);
+            }
+        });
+
         return listitemView;
+    }
+
+    public interface OnChiffreInteractionListener{
+        public void onFragmentInteraction(Double nb);
     }
 }

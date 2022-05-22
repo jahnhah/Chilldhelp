@@ -20,8 +20,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_marginTop="20dp"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
@@ -29,9 +30,31 @@
             <GridView
                 android:id="@+id/grid_puzzle_board"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="529dp"
                 android:horizontalSpacing="2dp"
                 android:verticalSpacing="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0.1"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btn_puzzle_valider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/bg_color"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:text="VALIDER"
+                android:textColor="@color/white"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
         </LinearLayout>
 
     </LinearLayout>
