@@ -11,6 +11,7 @@ public class GotoListener implements View.OnClickListener {
     private Activity currentActivity;
     private Class toShowClass;
     private String message;
+    private Boolean isFinish = false    ;
 
 
 
@@ -40,5 +41,16 @@ public class GotoListener implements View.OnClickListener {
             intent.putExtras(bundle);
         }
         currentActivity.startActivity(intent);
+        if (getFinish()){
+            currentActivity.finish();
+        }
+    }
+
+    public Boolean getFinish() {
+        return isFinish;
+    }
+
+    public void setFinish(Boolean finish) {
+        isFinish = finish;
     }
 }

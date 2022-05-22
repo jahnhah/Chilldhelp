@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.jahnhahcraven.childhelp.R;
 import com.jahnhahcraven.childhelp.controller.UserControl;
 import com.jahnhahcraven.childhelp.model.User;
+import com.jahnhahcraven.childhelp.view.home.HomeActivity;
 
 public class Sign2Activity extends AppCompatActivity {
     private Button btnNext;
@@ -35,7 +36,7 @@ public class Sign2Activity extends AppCompatActivity {
                 User user = new User();
                 user.setCode(code.getText().toString());
                 Log.e("38 Sin2Activity", "onClick: Eto isika  ");
-                UserControl.getInstance().sign2Feature(btnNext,message,Sign2Activity.this,null,user);
+                UserControl.getInstance().sign2Feature(btnNext,message,Sign2Activity.this, HomeActivity.class,user);
             }
         });
         this.message = (TextView) findViewById(R.id.textViewMessage);

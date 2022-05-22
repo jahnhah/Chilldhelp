@@ -1,6 +1,7 @@
 package com.jahnhahcraven.childhelp.view.level.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,8 @@ public class LevelAdapter extends ArrayAdapter<Game> {
     }
 
     private Class getGameRedirect(String gametype) throws Exception {
+        Log.e("level","game : "+gametype.toLowerCase().compareTo("letter"));
+
         if (gametype.toLowerCase().compareTo("puzzle")==0){
             return PuzzleActivity.class;
         }

@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/activity_lettre.xml" value="0.115625" />
         <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/activity_sign1.xml" value="0.25" />
         <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/activity_sign2.xml" value="0.18" />
         <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/fragment_example.xml" value="0.17074275362318841" />
+        <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/widget_chiffre_block.xml" value="0.14010416666666667" />
+        <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/widget_text_block.xml" value="0.14010416666666667" />
+        <entry key="..\:/Github/Chilldhelp/app/src/main/res/layout/widget_tile_card.xml" value="0.14010416666666667" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/drawable/button_blue.xml" value="0.121" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/drawable/button_gradient.xml" value="0.121" />
         <entry key="..\:/M1/mobile/ChildHelp/app/src/main/res/drawable/button_gray.xml" value="0.121" />

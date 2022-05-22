@@ -96,4 +96,19 @@ public class Game {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "_id='" + _id + '\'' +
+                ", media='" + media + '\'' +
+                ", gametype='" + gametype + '\'' +
+                ", level=" + level +
+                ", dimension=" + dimension +
+                ", result=" + result +
+                ", number_game=" + number_game +
+                ", text_game='" + text_game + '\'' +
+                ", tileList=" + tileList +
+                '}';
+    }
 }

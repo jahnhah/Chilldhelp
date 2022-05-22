@@ -52,7 +52,7 @@ public class UserControl {
         reponse.enqueue(new Callback<ReponseAPI>() {
             @Override
             public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
-                Log.e("Status",response.body().getStatus().toString());
+                Log.e("body",response.body().toString());
                 if(response.body().getStatus() == 200){
                     Intent intent  = new Intent(pageRecent, redirection);
                     SessionManager session = new SessionManager(pageRecent);
@@ -89,6 +89,13 @@ public class UserControl {
             public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
                 //Log.e("status",response.body().getStatus().toString());
                 if(response.body().getStatus() == 200){
+                    Intent intent  = new Intent(pageRecent, redirection);
+                    SessionManager session = new SessionManager(pageRecent);
+                    Gson gson = new Gson();
+                    User utilisateur = (User) gson.fromJson(gson.toJson(response.body().getData()),User.class);
+                    session.setSessionObject("KEY_USER",utilisateur);
+                    pageRecent.startActivity(intent);
+                    pageRecent.finish();
                     message.setText("Code correct");
                     message.setVisibility(View.VISIBLE);
                 }else{
@@ -115,8 +122,7 @@ public class UserControl {
         reponse.enqueue(new Callback<ReponseAPI>() {
             @Override
             public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
-                Log.e("status",response.body().getStatus().toString());
-                if(response.body().getStatus() == 200){
+                    if(response.body().getStatus() == 200){
                     Intent intent  = new Intent(pageRecent, redirect);
                     SessionManager session = new SessionManager(pageRecent);
                     Gson gson = new Gson();

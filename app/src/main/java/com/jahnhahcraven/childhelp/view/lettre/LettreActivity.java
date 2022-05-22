@@ -47,6 +47,7 @@ public class LettreActivity extends AppCompatActivity {
                 String user_answer=buttonGroupFragment.getAnswer();
                 LevelFragment levelFragment = new LevelFragment ();
                 if(answer.compareTo(user_answer)==0){
+                    levelFragment.setGameType("Letter");
                     levelFragment.show(fragmentManager, "Sample Fragment");
                 }
             }
@@ -58,7 +59,7 @@ public class LettreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lettre);
         init();
-    }
+        }
 
     private void loadGame(){
 //        fake api

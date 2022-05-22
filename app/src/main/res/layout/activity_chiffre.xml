@@ -27,7 +27,6 @@
                 android:id="@+id/video_chiffre_youtube"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:videoId="2Y2vuuFderY"
                 app:autoPlay="false"
                 />
 

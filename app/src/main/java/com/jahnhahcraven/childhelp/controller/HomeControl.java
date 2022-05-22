@@ -38,11 +38,13 @@ public class HomeControl {
     public void getGameType(HomeActivity page, ListView listView){
         SessionManager sessionManager = new SessionManager(page);
         User utilisateur = (User) sessionManager.getSessionObject("KEY_USER", User.class);
+        Log.e("user",utilisateur.toString());
         Call<ReponseAPI> reponse = service.gameService.getAllGameType(utilisateur.getToken());
         reponse.enqueue(new Callback<ReponseAPI>() {
             @Override
             public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
-                if(response.body().getStatus() == 200){
+                Log.e("reponse",response.body().toString());
+                if(response.body().getStatus() !=null && response.body().getStatus() == 200){
                     ArrayList<GameType> array =  new ReponseAPI().fomraterArrayJSONObject((ArrayList<Object>) response.body().getData(),GameType.class);
                     CardHomeAdapter cardHomeAdapter = new CardHomeAdapter(page,array);
                     listView.setAdapter(cardHomeAdapter);
