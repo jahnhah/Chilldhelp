@@ -122,7 +122,7 @@ public class UserControl {
         reponse.enqueue(new Callback<ReponseAPI>() {
             @Override
             public void onResponse(Call<ReponseAPI> call, Response<ReponseAPI> response) {
-                    if(response.body().getStatus() == 200){
+                if(response.body().getStatus() == 200){
                     Intent intent  = new Intent(pageRecent, redirect);
                     SessionManager session = new SessionManager(pageRecent);
                     Gson gson = new Gson();
@@ -133,7 +133,7 @@ public class UserControl {
                 }else{
                     //Log.e("Line Code :","Line 54 -- User Control.java");
                     //Log.e("Message Error", response.body().getStatus().toString());
-                    message.setText("internal Server Error");
+                    message.setText("Mot de passe incorrecte");
                     message.setVisibility(View.VISIBLE);
                 }
             }

@@ -12,7 +12,7 @@ public class BaseService {
     private BaseService(){
         Retrofit retrofit= new Retrofit
                 .Builder()
-                .baseUrl("http://172.16.224.144:8080")
+                .baseUrl("https://backchildhelp.herokuapp.com")
                 .addConverterFactory(GsonConverterFactory.create())
                  .build();
         postService = retrofit.create(IPostService.class);
