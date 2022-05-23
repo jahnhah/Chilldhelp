@@ -45,7 +45,8 @@ exports.getLevelGame = async (request,response) => {
                 'gametype': request.body.gametype
               }
             }
-        ]);
+        ]).sort({level:1});
+        
         console.log(doc.length);
 
         return response.status(200).send({
