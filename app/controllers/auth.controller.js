@@ -96,7 +96,11 @@ exports.login = async (request,response) => {
       request.body.password,
       user.password
     );
-    if (!passwordIsValid) return response.status(404).send("Password incorrect!");
+    if (!passwordIsValid) return response.status(404).send({
+      status:403,
+      data:{},
+      message:"Password incorrect!"
+    });
     const token = jwt.sign({ id: user._id,role:user.role ,activate:user.activate }, config.secret, {
       expiresIn: 86400, // 24 hours
     });
