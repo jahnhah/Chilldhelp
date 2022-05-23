@@ -45,7 +45,7 @@ exports.inscription = async (request,response) => {
 
 exports.verifyEmail = async (request,response) => {
   try {
-    const user = await User.findOne({email:request.body.email});
+    let user = await User.findOne({email:request.body.email});
     if (user.code != ""+request.body.code || !user) {
       return response.status(400).send({
         message:"Code incorrect!",
@@ -58,9 +58,10 @@ exports.verifyEmail = async (request,response) => {
     const token = jwt.sign({ id: user._id,role:user.role,activate:user.activate }, config.secret, {
       expiresIn: 86400, // 24 hours
     });
-    user.token = token;
     request.session.token = token;
-    const data = user;
+    console.log(token);
+    user = {...user._doc,token:token};
+    let data = user;
     response.status(200).send({
       message:"Code correct!",
       status:200,
@@ -68,9 +69,9 @@ exports.verifyEmail = async (request,response) => {
     });
   } catch (error) {
     response.status(500).send({
-      message:"Code incorrect!",
+      message:"Code incorrect!"+error.message,
       status:400,
-      data:data
+      data:{}
     });
   }
 }
