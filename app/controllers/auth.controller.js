@@ -87,7 +87,7 @@ exports.login = async (request,response) => {
   try {
     console.log(request.body);
     let user = await User.findOne({email:request.body.email});
-    if (!user) return response.status(403).send({
+    if (!user) return response.status(200).send({
       status:403,
       data:{},
       message:"User not recognize , Please create your account"
@@ -96,7 +96,7 @@ exports.login = async (request,response) => {
       request.body.password,
       user.password
     );
-    if (!passwordIsValid) return response.status(404).send({
+    if (!passwordIsValid) return response.status(200).send({
       status:403,
       data:{},
       message:"Password incorrect!"
@@ -114,7 +114,7 @@ exports.login = async (request,response) => {
     response.status(200).send(data);
   } catch (err) {
     console.log(err);
-    response.status(500).send({
+    response.status(200).send({
       status:500,
       data:{},
       message:"Error : "+err
